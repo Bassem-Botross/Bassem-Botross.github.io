@@ -278,6 +278,49 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 12px;
+}
+
+.contact-icon {
+    background: transparent !important;
+    color: var(--accent-orange) !important;
+    font-size: 22px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-icon:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+.icon-wa, .icon-tg, .icon-max, .icon-li {
+    background: transparent !important;
+    color: var(--accent-orange) !important;
+}
+
+/* Mobile Alignment Fix */
+@media (max-width: 900px) {
+    .contact-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-icons {
+        justify-content: center;
+    }
+}
+        /* Direct Contact Icons - Horizontal & Orange Monochrome */
+.contact-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 16px;
     margin-top: 12px;
 }
