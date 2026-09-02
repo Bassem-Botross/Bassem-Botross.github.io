@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --bg-dark: #121212;
@@ -272,6 +273,39 @@
                 order: -1;
             }
         }
+        }
+
+/* Platform Contact Icons */
+.contact-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.contact-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-icon:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.icon-wa { background-color: #25D366; color: #ffffff; }
+.icon-tg { background-color: #2AABEE; color: #ffffff; }
+.icon-max { background: linear-gradient(135deg, #00C6FF 0%, #0072FF 50%, #923CB5 100%); color: #ffffff; }
+.icon-li { background-color: #0A66C2; color: #ffffff; }
+
+</style>
     </style>
 </head>
 <body>
@@ -303,6 +337,21 @@
             <div class="contact-list">
                 <a href="mailto:Bassem.Botross@gmail.com">Bassem.Botross@gmail.com</a>
                 <a href="tel:+79935444202">+7 993 544 4202</a>
+                <!-- Social Contact Icons -->
+        <div class="contact-icons">
+            <a href="https://wa.me/79935444202" target="_blank" rel="noopener noreferrer" class="contact-icon icon-wa" title="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+            <a href="https://t.me/the_bassem" target="_blank" rel="noopener noreferrer" class="contact-icon icon-tg" title="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+            <a href="https://max.ru/79935444202" target="_blank" rel="noopener noreferrer" class="contact-icon icon-max" title="Max">
+                <i class="fa-solid fa-comment-dots"></i>
+            </a>
+            <a href="https://ae.linkedin.com/in/bassem-botross-93474a112" target="_blank" rel="noopener noreferrer" class="contact-icon icon-li" title="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
             </div>
         </div>
     </header>
