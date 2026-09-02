@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bassem Botross | Operations & Project Management Leader</title>
+    <title>Bassem Botross | Operations Leader</title>
+    <!-- Google Fonts matching the reference design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1e293b;
-            --accent: #2563eb;
-            --text: #334155;
-            --bg: #f8fafc;
-            --card: #ffffff;
-            --border: #e2e8f0;
+            --bg-dark: #121212;
+            --card-dark: #1a1a1a;
+            --card-border: #2a2a2a;
+            --accent-orange: #ff5733;
+            --accent-mint: #00e6a8;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
 
         * {
@@ -21,132 +27,249 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: var(--font-family);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
             padding: 20px;
         }
 
         .container {
-            max-width: 850px;
-            margin: 40px auto;
-            background: var(--card);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            border: 1px solid var(--border);
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        header {
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            color: var(--primary);
-            font-size: 2.2rem;
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .contact-info {
+        /* Top Bar Navigation */
+        nav {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            font-size: 0.95rem;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0 40px 0;
         }
 
-        .contact-info a {
-            color: var(--accent);
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: var(--accent-orange);
+            color: white;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
             text-decoration: none;
+            margin-left: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
+        .nav-links a:hover {
+            color: var(--accent-orange);
         }
 
-        section {
-            margin-bottom: 30px;
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 320px 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 60px;
+            padding: 40px 0;
         }
 
-        h2 {
-            color: var(--primary);
-            font-size: 1.3rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 5px;
+        .hero-left h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
             margin-bottom: 15px;
         }
 
+        .hero-left .highlight {
+            color: var(--accent-orange);
+        }
+
+        .hero-photo-wrapper {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 20px;
+            filter: drop-shadow(0 15px 30px rgba(255, 87, 51, 0.15));
+            border: 2px solid var(--card-border);
+            background: #222;
+        }
+
+        .hero-right .role-badge {
+            color: var(--accent-orange);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero-right h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .hero-right p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-list a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        /* Core Section Layout */
+        section {
+            background: var(--card-dark);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 0.85rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: var(--card-border);
+        }
+
+        /* Competencies Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
-        .skill-category strong {
-            color: var(--primary);
-            display: block;
-            margin-bottom: 3px;
+        .skill-card {
+            background: #121212;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--card-border);
         }
 
-        .job {
-            margin-bottom: 20px;
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Experience Items */
+        .job-item {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .job-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
         }
 
         .job-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
+            align-items: flex-start;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            margin-bottom: 5px;
         }
 
         .job-title {
-            font-weight: bold;
-            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 700;
         }
 
-        .company {
-            color: var(--accent);
+        .company-name {
+            color: var(--accent-orange);
             font-weight: 600;
         }
 
-        .date-location {
-            font-size: 0.85rem;
-            color: #64748b;
+        .date-badge {
+            background: #222;
+            color: var(--text-muted);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--card-border);
         }
 
-        ul {
-            list-style-type: square;
-            margin-left: 20px;
+        ul.job-bullets {
+            list-style: none;
+            padding-left: 0;
         }
 
-        li {
-            margin-bottom: 6px;
+        ul.job-bullets li {
+            position: relative;
+            padding-left: 20px;
+            color: var(--text-muted);
             font-size: 0.95rem;
+            margin-bottom: 8px;
         }
 
-        .edu-item, .lang-item {
-            margin-bottom: 10px;
+        ul.job-bullets li::before {
+            content: '•';
+            color: var(--accent-orange);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-                margin: 10px auto;
+        ul.job-bullets li strong {
+            color: var(--text-main);
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
             }
-            .job-header {
-                flex-direction: column;
+            .hero-left h1 {
+                font-size: 2.5rem;
+            }
+            .hero-photo-wrapper {
+                order: -1;
             }
         }
     </style>
@@ -154,128 +277,167 @@
 <body>
 
 <div class="container">
-    <header>
-        <h1>Bassem Botross</h1>
-        <div class="subtitle">Operations & Project Management Leader</div>
-        <div class="contact-info">
-            <span>Chelyabinsk, Russia</span>
-            <span>•</span>
-            <a href="mailto:Bassem.Botross@gmail.com">Bassem.Botross@gmail.com</a>
-            <span>•</span>
-            <a href="tel:+79935444202">+7 993 544 4202</a>
+    <nav>
+        <div class="logo">B.</div>
+        <div class="nav-links">
+            <a href="#summary">About</a>
+            <a href="#skills">Competencies</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Photo Integration -->
+    <header class="hero">
+        <div class="hero-left">
+            <h1>Bassem<br><span class="highlight">Botross</span></h1>
+        </div>
+        <div class="hero-photo-wrapper">
+            <!-- Upload your photo named 'profile.jpg' or use your GitHub direct image URL -->
+            <img src="profile.jpg" alt="Bassem Botross" class="profile-img" onerror="this.src='https://via.placeholder.com/280x350/1a1a1a/ff5733?text=Bassem+Botross'">
+        </div>
+        <div class="hero-right">
+            <span class="role-badge">Operations Leader</span>
+            <h2>Based in Chelyabinsk, Russia</h2>
+            <p>15+ years of experience driving customer success, team performance, and operational excellence for Fortune 500 brands.</p>
+            <div class="contact-list">
+                <a href="mailto:Bassem.Botross@gmail.com">Bassem.Botross@gmail.com</a>
+                <a href="tel:+79935444202">+7 993 544 4202</a>
+            </div>
         </div>
     </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p>Results-driven Operations Manager and Project Leader with over 15 years of experience driving customer success, team performance, and service quality across international markets (UAE, Egypt, Russia). Proven track record with Fortune 500 brands (Apple, Sony, AT&T) in reducing customer churn, optimizing NPS/CSAT metrics, and leading cross-functional teams to operational excellence.</p>
+    <!-- Summary -->
+    <section id="summary">
+        <div class="section-title">Professional Summary</div>
+        <p style="color: var(--text-muted); font-size: 1.05rem;">
+            Results-driven Operations Manager and Project Leader with over 15 years of experience driving customer success, team performance, and service quality across international markets (UAE, Egypt, Russia). Proven track record with Fortune 500 brands (Apple, Sony, AT&T) in reducing customer churn, optimizing NPS/CSAT metrics, and leading cross-functional teams to operational excellence.
+        </p>
     </section>
 
-    <section>
-        <h2>Core Competencies</h2>
+    <!-- Core Competencies -->
+    <section id="skills">
+        <div class="section-title">Core Competencies</div>
         <div class="skills-grid">
-            <div class="skill-category">
-                <strong>Operations & Leadership</strong>
-                Cross-Functional Team Leadership, SLA & KPI Management, Escalation Management, Quality Assurance (QA).
+            <div class="skill-card">
+                <h3>Operations & Leadership</h3>
+                <p>Cross-Functional Team Leadership, SLA & KPI Management, Escalation Management, Quality Assurance (QA).</p>
             </div>
-            <div class="skill-category">
-                <strong>Strategy & Growth</strong>
-                NPS/CSAT Optimization, Customer Experience Strategy, Operational Synergy, Process Improvement.
+            <div class="skill-card">
+                <h3>Strategy & Growth</h3>
+                <p>NPS/CSAT Optimization, Customer Experience Strategy, Operational Synergy, Process Improvement.</p>
             </div>
-            <div class="skill-category">
-                <strong>Coaching & Performance</strong>
-                Staff Onboarding & Development, Performance Evaluation, Executive Support, Communication.
+            <div class="skill-card">
+                <h3>Coaching & Performance</h3>
+                <p>Staff Onboarding & Development, Performance Evaluation, Executive Support, Communication.</p>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2>Professional Experience</h2>
+    <!-- Experience -->
+    <section id="experience">
+        <div class="section-title">Professional Experience</div>
 
-        <div class="job">
+        <div class="job-item">
             <div class="job-header">
-                <div><span class="job-title">Strategic Project Manager</span> | <span class="company">Infinity Hash</span></div>
-                <div class="date-location">04/2024 – Present | Chelyabinsk, Russia</div>
+                <div>
+                    <div class="job-title">Strategic Project Manager</div>
+                    <div class="company-name">Infinity Hash — Chelyabinsk, Russia</div>
+                </div>
+                <span class="date-badge">04/2024 – Present</span>
             </div>
-            <ul>
-                <li><strong>Cross-Functional Leadership:</strong> Serve as the central operational liaison between departments to align marketing, social media campaigns, and product delivery teams.</li>
+            <ul class="job-bullets">
+                <li><strong>Cross-Functional Leadership:</strong> Serve as central operational liaison between departments to align marketing and delivery teams.</li>
                 <li><strong>Process Optimization:</strong> Analyze internal operational workflows to reduce friction and boost team output efficiency.</li>
                 <li><strong>Customer Insights:</strong> Oversee NPS/CSAT tracking systems and implement data-driven improvements to elevate client satisfaction.</li>
             </ul>
         </div>
 
-        <div class="job">
+        <div class="job-item">
             <div class="job-header">
-                <div><span class="job-title">Quality Assurance Coach</span> | <span class="company">Supreme Sales</span></div>
-                <div class="date-location">03/2023 – 04/2024 | Moscow, Russia</div>
+                <div>
+                    <div class="job-title">Quality Assurance Coach</div>
+                    <div class="company-name">Supreme Sales — Moscow, Russia</div>
+                </div>
+                <span class="date-badge">03/2023 – 04/2024</span>
             </div>
-            <ul>
-                <li><strong>Call Quality & Compliance:</strong> Evaluated live and recorded calls across high-volume U.S. client accounts to enforce script compliance and quality standards.</li>
-                <li><strong>Agent Coaching:</strong> Delivered regular data-driven coaching sessions using real call examples, significantly improving agent closing rates and communication quality.</li>
-                <li><strong>Progress Tracking:</strong> Monitored team performance metrics and designed targeted refresher modules for underperforming representatives.</li>
+            <ul class="job-bullets">
+                <li><strong>Call Quality & Compliance:</strong> Evaluated live/recorded calls across high-volume U.S. client accounts to enforce quality standards.</li>
+                <li><strong>Agent Coaching:</strong> Delivered regular data-driven coaching sessions, significantly improving agent closing rates and communication quality.</li>
+                <li><strong>Progress Tracking:</strong> Monitored performance metrics and designed targeted refresher modules for underperforming reps.</li>
             </ul>
         </div>
 
-        <div class="job">
+        <div class="job-item">
             <div class="job-header">
-                <div><span class="job-title">Corporate Trainer</span> | <span class="company">Planet</span></div>
-                <div class="date-location">01/2022 – 01/2023 | Dubai, UAE</div>
+                <div>
+                    <div class="job-title">Corporate Trainer</div>
+                    <div class="company-name">Planet — Dubai, UAE</div>
+                </div>
+                <span class="date-badge">01/2022 – 01/2023</span>
             </div>
-            <ul>
-                <li><strong>Onboarding & Systems Training:</strong> Trained new personnel on tourist tax-refund platforms, compliance procedures, and operational guidelines.</li>
-                <li><strong>Service Excellence:</strong> Coached customer-facing staff on conflict resolution and professional communication protocols at key tourist hubs.</li>
+            <ul class="job-bullets">
+                <li><strong>Onboarding & Systems Training:</strong> Trained new personnel on tourist tax-refund platforms, compliance procedures, and guidelines.</li>
+                <li><strong>Service Excellence:</strong> Coached customer-facing staff on conflict resolution and professional communication protocols.</li>
             </ul>
         </div>
 
-        <div class="job">
+        <div class="job-item">
             <div class="job-header">
-                <div><span class="job-title">Operations Manager</span> | <span class="company">Apple</span></div>
-                <div class="date-location">11/2016 – 08/2021 | Dubai, UAE</div>
+                <div>
+                    <div class="job-title">Operations Manager</div>
+                    <div class="company-name">Apple — Dubai, UAE</div>
+                </div>
+                <span class="date-badge">11/2016 – 08/2021</span>
             </div>
-            <ul>
-                <li><strong>Escalation Management:</strong> Handled complex customer escalations regarding Apple products, Apple Store operations, and Authorized Service Providers.</li>
+            <ul class="job-bullets">
+                <li><strong>Escalation Management:</strong> Handled complex customer escalations regarding Apple products, Apple Store operations, and service providers.</li>
                 <li><strong>Complaint Reduction:</strong> Reduced customer complaints by 30% through the implementation of an escalated grievance resolution workflow.</li>
-                <li><strong>Training & Retention:</strong> Developed departmental training materials, driving a 20% increase in team effectiveness and improving positive feedback metrics by 40%.</li>
+                <li><strong>Training & Retention:</strong> Developed departmental training materials, driving a 20% increase in effectiveness and 40% gain in positive feedback.</li>
             </ul>
         </div>
 
-        <div class="job">
+        <div class="job-item">
             <div class="job-header">
-                <div><span class="job-title">Quality Assurance Specialist</span> | <span class="company">Sony</span></div>
-                <div class="date-location">01/2013 – 10/2016 | Alexandria, Egypt</div>
+                <div>
+                    <div class="job-title">Quality Assurance Specialist</div>
+                    <div class="company-name">Sony — Alexandria, Egypt</div>
+                </div>
+                <span class="date-badge">01/2013 – 10/2016</span>
             </div>
-            <ul>
+            <ul class="job-bullets">
                 <li><strong>Team Leadership:</strong> Led and coached customer support teams, achieving a consistent 95% customer satisfaction score.</li>
-                <li><strong>Performance Coaching:</strong> Evaluated agent performance against standard KBIs, driving a 45% team performance increase over two consecutive years.</li>
+                <li><strong>Performance Coaching:</strong> Evaluated agent performance against KBIs, driving a 45% performance increase over two consecutive years.</li>
             </ul>
         </div>
 
-        <div class="job">
+        <div class="job-item">
             <div class="job-header">
-                <div><span class="job-title">Customer Service Specialist</span> | <span class="company">Sutherland Global Services (AT&T Account)</span></div>
-                <div class="date-location">09/2009 – 11/2013 | Alexandria, Egypt</div>
+                <div>
+                    <div class="job-title">Customer Service Specialist</div>
+                    <div class="company-name">Sutherland Global Services (AT&T Account) — Alexandria, Egypt</div>
+                </div>
+                <span class="date-badge">09/2009 – 11/2013</span>
             </div>
-            <ul>
+            <ul class="job-bullets">
                 <li><strong>Script Development:</strong> Developed a new customer onboarding script adopted account-wide, receiving management commendations.</li>
                 <li><strong>Revenue Growth:</strong> Identified key account requirements and upsold business services, expanding account revenue by 12%.</li>
             </ul>
         </div>
     </section>
 
-    <section>
-        <h2>Education</h2>
-        <div class="edu-item">
-            <strong>Bachelor of Commerce (Major in Accounting)</strong><br>
-            Faculty of Commerce (English Department), Alexandria University (06/2008)
-        </div>
-    </section>
-
-    <section>
-        <h2>Languages</h2>
-        <div class="lang-item">
-            <strong>English:</strong> Fluent / Native Proficiency<br>
-            <strong>Arabic:</strong> Native (Mother Tongue)<br>
-            <strong>Russian:</strong> Basic
+    <!-- Education & Languages -->
+    <section id="education">
+        <div class="section-title">Education & Languages</div>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Bachelor of Commerce (Major in Accounting)</h3>
+                <p>Faculty of Commerce (English Department), Alexandria University (06/2008)</p>
+            </div>
+            <div class="skill-card">
+                <h3>Languages</h3>
+                <p><strong>English:</strong> Native / Fluent<br><strong>Arabic:</strong> Mother Tongue<br><strong>Russian:</strong> Basic</p>
+            </div>
         </div>
     </section>
 </div>
