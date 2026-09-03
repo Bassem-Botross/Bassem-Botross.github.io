@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* Changed body background slightly to #181818 to match the dark box behind logo, or keep seamless dark tones */
             --bg-dark: #121212;
             --card-dark: #1a1a1a;
             --card-border: #2a2a2a;
@@ -41,10 +40,10 @@
             margin: 0 auto;
         }
 
-        /* Top Bar Navigation Structure */
+        /* Top Navigation Bar */
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end; /* Align nav elements to top right */
             align-items: center;
             padding: 20px 0 40px 0;
         }
@@ -67,7 +66,7 @@
             color: var(--accent-orange);
         }
 
-        /* Logo Styling & Alignment Updates */
+        /* Logo Styling - Resized and Blended */
         .logo-link {
             display: inline-flex;
             align-items: flex-start;
@@ -76,7 +75,7 @@
             transition: transform 0.2s ease, opacity 0.2s ease;
             background: transparent;
             padding: 0;
-            border-radius: 0;
+            margin-left: 10px; /* Space between Education link and logo */
         }
 
         .logo-link:hover {
@@ -84,21 +83,21 @@
             transform: translateY(-1px);
         }
 
-        /* Increased size to 65px for a larger, prominent brand mark */
+        /* Increased height to 90px for substantial visibility */
         .brand-logo-img {
-            height: 65px;
+            height: 90px;
             width: auto;
             object-fit: contain;
             display: block;
-            /* Mix-blend-mode blends out any slight dark background mismatch on the image */
-            mix-blend-mode: lighten;
+            background-color: transparent;
+            mix-blend-mode: lighten; /* Blends logo background seamlessly into page */
         }
 
         .registered-symbol {
             color: var(--accent-orange);
-            font-size: 12px;
+            font-size: 14px;
             font-weight: bold;
-            margin-left: 3px;
+            margin-left: 2px;
             margin-top: -2px;
             user-select: none;
         }
@@ -170,7 +169,7 @@
             font-weight: 600;
         }
 
-        /* Platform Contact Icons */
+        /* Contact Icons */
         .contact-icons {
             display: flex;
             flex-direction: row;
@@ -318,8 +317,11 @@
 
         @media (max-width: 900px) {
             nav {
-                flex-direction: column;
-                gap: 20px;
+                justify-content: center;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
             }
             .hero {
                 grid-template-columns: 1fr;
@@ -346,17 +348,14 @@
 
 <div class="container">
     <nav>
-        <!-- Left side spacer to keep alignment clean -->
-        <div></div>
-
-        <!-- Navigation Links & Logo moved directly to top-right beside "Education" -->
+        <!-- Navigation Links with Logo directly beside Education -->
         <div class="nav-links">
             <a href="#summary">About</a>
             <a href="#skills">Competencies</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
             
-            <!-- Logo directly to the right of Education -->
+            <!-- Logo directly to the right of "Education" -->
             <a href="#" class="logo-link" title="Return to Top">
                 <img src="logo.png" alt="Bassem Botross Logo" class="brand-logo-img">
                 <span class="registered-symbol">&reg;</span>
