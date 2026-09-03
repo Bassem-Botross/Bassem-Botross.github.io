@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bassem Botross | Operations Leader</title>
-    <!-- Google Fonts matching the reference design -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
+            /* Changed body background slightly to #181818 to match the dark box behind logo, or keep seamless dark tones */
             --bg-dark: #121212;
             --card-dark: #1a1a1a;
             --card-border: #2a2a2a;
@@ -40,7 +41,7 @@
             margin: 0 auto;
         }
 
-        /* Top Bar Navigation */
+        /* Top Bar Navigation Structure */
         nav {
             display: flex;
             justify-content: space-between;
@@ -48,12 +49,34 @@
             padding: 20px 0 40px 0;
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Logo Styling & Alignment Updates */
         .logo-link {
             display: inline-flex;
             align-items: flex-start;
             text-decoration: none;
             cursor: pointer;
             transition: transform 0.2s ease, opacity 0.2s ease;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
         }
 
         .logo-link:hover {
@@ -61,33 +84,23 @@
             transform: translateY(-1px);
         }
 
+        /* Increased size to 65px for a larger, prominent brand mark */
         .brand-logo-img {
-            height: 38px;
+            height: 65px;
             width: auto;
             object-fit: contain;
             display: block;
+            /* Mix-blend-mode blends out any slight dark background mismatch on the image */
+            mix-blend-mode: lighten;
         }
 
         .registered-symbol {
             color: var(--accent-orange);
-            font-size: 10px;
+            font-size: 12px;
             font-weight: bold;
-            margin-left: 2px;
+            margin-left: 3px;
             margin-top: -2px;
             user-select: none;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-orange);
         }
 
         /* Hero Section */
@@ -304,6 +317,10 @@
         }
 
         @media (max-width: 900px) {
+            nav {
+                flex-direction: column;
+                gap: 20px;
+            }
             .hero {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -329,19 +346,25 @@
 
 <div class="container">
     <nav>
-        <a href="#" class="logo-link" title="Return to Top">
-            <img src="logo.png" alt="Bassem Botross Logo" class="brand-logo-img">
-            <span class="registered-symbol">&reg;</span>
-        </a>
+        <!-- Left side spacer to keep alignment clean -->
+        <div></div>
+
+        <!-- Navigation Links & Logo moved directly to top-right beside "Education" -->
         <div class="nav-links">
             <a href="#summary">About</a>
             <a href="#skills">Competencies</a>
             <a href="#experience">Experience</a>
             <a href="#education">Education</a>
+            
+            <!-- Logo directly to the right of Education -->
+            <a href="#" class="logo-link" title="Return to Top">
+                <img src="logo.png" alt="Bassem Botross Logo" class="brand-logo-img">
+                <span class="registered-symbol">&reg;</span>
+            </a>
         </div>
     </nav>
 
-    <!-- Hero Section with Photo Integration -->
+    <!-- Hero Section -->
     <header class="hero">
         <div class="hero-left">
             <h1>Bassem<br><span class="highlight">Botross</span></h1>
